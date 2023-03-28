@@ -20,6 +20,11 @@ body {
     padding: 20px;
 }
 
+.homeheader {
+    text-align: center;
+    font-size: 5rem;
+}
+
 form {
     width: 30%;
     margin: 0 auto;
@@ -27,11 +32,6 @@ form {
     border: 1px solid #b0c4de;
     background: white;
     border-radius: 0px 0px 10px 10px;
-}
-
-.homeheader {
-    text-align: center;
-    font-size: 5rem;
 }
 
 .homecontent {

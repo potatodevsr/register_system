@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('server.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,7 @@
     <title>Login Page</title>
 </head>
 <body>
+    
     <div class="header">
         <h2>Login</h2>
     </div>

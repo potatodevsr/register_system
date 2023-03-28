@@ -12,7 +12,18 @@
         <h2>Login</h2>
     </div>
 
-    <form action="register_db.php">
+    <form action="register_db.php" method="post">
+    <?php if (isset($_SESSION['error'])) : ?>
+            <div class="error">
+                <h3>
+                    <?php 
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+    
         <div class="input-group">
             <label for="username">Username</label>
             <input type="text" name="username">

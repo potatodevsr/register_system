@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     //ถ้าไม่มีการ login จะเลือกใช้ header เป็นการ redirect ไปที่หน้า login (msg) คือ message
     if (!isset($_SESSION['username'])) {
         $_SESSION['msg'] = "ํYou must log in first";
@@ -29,7 +30,7 @@
         <h2>Home Page</h2>
     </div>
 
-    <div class="content">
+    <div class="homecontent">
         <!--  notification message -->
         <?php if (isset($_SESSION['success'])) : ?>
             <div class="success">

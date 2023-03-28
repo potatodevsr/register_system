@@ -1,4 +1,7 @@
 <?php
+    session_start();
+    include('server.php');
+
     $errors = array();
 
     if (isset($_POST['login_user'])) {
@@ -22,13 +25,15 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "Your are now logged in";
                 header("location: index.php");
-            }
-            //ถ้าเกิดผิดพลาด ให้ push ไปที่ $errors
-            else {
-                array_push($errors, "Wrong username/password combination");
-                $_SESSION['error'] = "Wrong username or password try again";
-                header("location: index.php");
+            } else {
+                array_push($errors, "Wrong username or Password");
+                $_SESSION['error'] = "Wrong username or Password!";
+                header("location: login.php");
+            } 
+             } else {
+                array_push($errors, "Username & Password is required");
+                $_SESSION['error'] = "Wrong username or Password!";
+                header("location: login.php");
             }
         }
-    }
 ?>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('server');
+include('server.php');
 
 //กำหนด $errors เอาไว้เก็บ error ที่เป็น array
 $errors = array();
@@ -55,10 +55,7 @@ if (isset($_POST['reg_user'])) {
     //check errors
     if (count($errors) == 0) {
         $password = md5($password_1);
-
-        $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
-        mysqli_query($conn, $sql);
-
+        $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')"; mysqli_query($conn, $sql);
 
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "You are now logged in";
